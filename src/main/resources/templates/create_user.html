@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">-->
+<head>
+    <meta charset="UTF-8">
+    <title>create user</title>
+</head>
+<body>
+
+<form th:action=" @{/logout}", method="post">
+    <input type="submit" value="Logout">
+</form>
+
+<form method="post" th:action="@{/user}" th:object="${user}">
+    <input type="hidden" th:field="*{id}">
+    <label for="name">Create name:</label>
+    <input type="text" th:field="*{name}" id="name">
+    <br><br>
+    <label for="age">Age:</label>
+    <input type="text" th:field="*{age}" id="age">
+    <br><br>
+    <label for="email">Create email:</label>
+    <input type="text" th:field="*{email}" id="email">
+    <br><br>
+    <label for="username">Create username:</label>
+    <input type="text" th:field="*{username}", id="username" placeholder="username">
+    <br><br>
+    <label for="password">Update password:</label>
+    <input type="text" th:field="*{password}" id="password">
+    <br><br>
+
+<!--    <p>What role do you choose:</p>-->
+<!--    <input type="radio" th:field="*{adminOrUser}" value="1" id="admin" name="ai">-->
+<!--    <label for="admin">Admin</label>-->
+<!--    <input type="radio" th:field="*{adminOrUser}" value="2" id="user" name="ai">-->
+<!--    <label for="user">User</label>-->
+
+    <input type="submit" value="Save!">
+
+</form>
+
+</body>
+</html>
